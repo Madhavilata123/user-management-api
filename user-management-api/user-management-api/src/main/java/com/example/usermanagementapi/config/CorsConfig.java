@@ -1,4 +1,4 @@
-package com.example.usermanagementapi;
+package com.example.usermanagementapi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +14,8 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                    .allowedOrigins("https://your-frontend.vercel.app")
-                    .allowedMethods("*")
-                    .allowedHeaders("*");
+                        .allowedOrigins("*")   // allow all (for now)
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
             }
         };
     }
